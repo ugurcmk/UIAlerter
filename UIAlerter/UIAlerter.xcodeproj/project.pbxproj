@@ -16,6 +16,7 @@
 		B6BA398D24EE6699001704C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BA398B24EE6699001704C3 /* Main.storyboard */; };
 		B6BA398F24EE669A001704C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6BA398E24EE669A001704C3 /* Assets.xcassets */; };
 		B6BA399224EE669A001704C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BA399024EE669A001704C3 /* LaunchScreen.storyboard */; };
+		B6BA399824EFB410001704C3 /* UIAlerter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA399724EFB410001704C3 /* UIAlerter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		B6BA398E24EE669A001704C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6BA399124EE669A001704C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6BA399324EE669A001704C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6BA399724EFB410001704C3 /* UIAlerter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlerter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				B6BA396824EE6683001704C3 /* UIAlerter.h */,
 				B6BA396924EE6683001704C3 /* Info.plist */,
+				B6BA399724EFB410001704C3 /* UIAlerter.swift */,
 			);
 			path = UIAlerter;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				TargetAttributes = {
 					B6BA396424EE6683001704C3 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 					B6BA396D24EE6683001704C3 = {
 						CreatedOnToolsVersion = 11.5;
@@ -263,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6BA399824EFB410001704C3 /* UIAlerter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +442,7 @@
 		B6BA397A24EE6683001704C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 74YG82KL4S;
@@ -454,6 +460,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -462,6 +469,7 @@
 		B6BA397B24EE6683001704C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 74YG82KL4S;
@@ -487,6 +495,7 @@
 		B6BA397D24EE6683001704C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74YG82KL4S;
 				INFOPLIST_FILE = UIAlerterTests/Info.plist;
@@ -505,6 +514,7 @@
 		B6BA397E24EE6683001704C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74YG82KL4S;
 				INFOPLIST_FILE = UIAlerterTests/Info.plist;
