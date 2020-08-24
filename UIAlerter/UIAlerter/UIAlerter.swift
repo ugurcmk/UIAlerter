@@ -13,7 +13,7 @@ open class UIAlerterBuilder: UIView {
     
     public init() {
         // TODO: height could be dynamic
-        super.init(frame: CGRect(x: 0, y: -200, width: UIScreen.main.bounds.width, height: 200))
+        super.init(frame: CGRect(x: 0, y: -210, width: UIScreen.main.bounds.width, height: 210))
     }
 
     required public init?(coder: NSCoder) {
@@ -34,14 +34,23 @@ open class UIAlerterBuilder: UIView {
     }
     
     public func show(){
+        self.layer.opacity = 0.5
+        
         self.window?.windowLevel += 1
         if let window = UIApplication.shared.keyWindow {
             window.addSubview(self)
-            window.layoutIfNeeded()
         }else{
             UIApplication.shared.windows[0].addSubview(self)
-            UIApplication.shared.windows[0].layoutIfNeeded()
         }
+        
+        UIView.animate(withDuration: 0.3, delay:0.2, options: [.curveEaseInOut], animations: {
+            self.frame.origin.y = 0
+            self.layer.opacity = 1
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseIn], animations: {
+                self.frame.origin.y = self.frame.origin.y - 30
+            }, completion: nil)
+        })
         
     }
 }
