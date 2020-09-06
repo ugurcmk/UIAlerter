@@ -12,6 +12,7 @@ import UIAlerter
 class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
+        self.view.backgroundColor = .white
         UIAlerterBuilder().setBackgroundColor(UIColor.lightGray).show()
     }
 }

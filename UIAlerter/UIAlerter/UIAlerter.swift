@@ -47,9 +47,18 @@ open class UIAlerterBuilder: UIView {
             self.frame.origin.y = 0
             self.layer.opacity = 1
         }, completion: { _ in
-            UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseIn], animations: {
+            UIView.animate(withDuration: 0.20, delay: 0, options: [.curveEaseInOut], animations: {
                 self.frame.origin.y = self.frame.origin.y - 30
-            }, completion: nil)
+            }, completion: {_ in
+                UIView.animate(withDuration: 0.2, delay: 1, options: [.curveEaseInOut], animations: {
+                    self.frame.origin.y = self.frame.origin.y + 30
+                }, completion: {_ in
+                    UIView.animate(withDuration: 0.2, delay: 0.1, options: [.curveEaseInOut], animations: {
+                        self.frame.origin.y = -210
+                        self.layer.opacity = 0
+                    }, completion: nil)
+                })
+            })
         })
         
     }

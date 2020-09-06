@@ -7,19 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B64E87572505040F0000B449 /* UIAlerter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6BA396524EE6683001704C3 /* UIAlerter.framework */; };
+		B64E87582505040F0000B449 /* UIAlerter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B6BA396524EE6683001704C3 /* UIAlerter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B6BA396F24EE6683001704C3 /* UIAlerter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6BA396524EE6683001704C3 /* UIAlerter.framework */; };
 		B6BA397424EE6683001704C3 /* UIAlerterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA397324EE6683001704C3 /* UIAlerterTests.swift */; };
 		B6BA397624EE6683001704C3 /* UIAlerter.h in Headers */ = {isa = PBXBuildFile; fileRef = B6BA396824EE6683001704C3 /* UIAlerter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6BA398624EE6699001704C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA398524EE6699001704C3 /* AppDelegate.swift */; };
-		B6BA398824EE6699001704C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA398724EE6699001704C3 /* SceneDelegate.swift */; };
 		B6BA398A24EE6699001704C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA398924EE6699001704C3 /* ViewController.swift */; };
-		B6BA398D24EE6699001704C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BA398B24EE6699001704C3 /* Main.storyboard */; };
 		B6BA398F24EE669A001704C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6BA398E24EE669A001704C3 /* Assets.xcassets */; };
 		B6BA399224EE669A001704C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BA399024EE669A001704C3 /* LaunchScreen.storyboard */; };
 		B6BA399824EFB410001704C3 /* UIAlerter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA399724EFB410001704C3 /* UIAlerter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B64E87592505040F0000B449 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6BA395C24EE6683001704C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6BA396424EE6683001704C3;
+			remoteInfo = UIAlerter;
+		};
 		B6BA397024EE6683001704C3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B6BA395C24EE6683001704C3 /* Project object */;
@@ -28,6 +35,20 @@
 			remoteInfo = UIAlerter;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B64E875B2505040F0000B449 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B64E87582505040F0000B449 /* UIAlerter.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B6BA396524EE6683001704C3 /* UIAlerter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIAlerter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,9 +59,7 @@
 		B6BA397524EE6683001704C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6BA398324EE6699001704C3 /* UIAlerterExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIAlerterExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6BA398524EE6699001704C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B6BA398724EE6699001704C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B6BA398924EE6699001704C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B6BA398C24EE6699001704C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B6BA398E24EE669A001704C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6BA399124EE669A001704C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6BA399324EE669A001704C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,12 +86,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B64E87572505040F0000B449 /* UIAlerter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B64E87562505040F0000B449 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B6BA395B24EE6683001704C3 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +107,7 @@
 				B6BA397224EE6683001704C3 /* UIAlerterTests */,
 				B6BA398424EE6699001704C3 /* UIAlerterExample */,
 				B6BA396624EE6683001704C3 /* Products */,
+				B64E87562505040F0000B449 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,9 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				B6BA398524EE6699001704C3 /* AppDelegate.swift */,
-				B6BA398724EE6699001704C3 /* SceneDelegate.swift */,
 				B6BA398924EE6699001704C3 /* ViewController.swift */,
-				B6BA398B24EE6699001704C3 /* Main.storyboard */,
 				B6BA398E24EE669A001704C3 /* Assets.xcassets */,
 				B6BA399024EE669A001704C3 /* LaunchScreen.storyboard */,
 				B6BA399324EE669A001704C3 /* Info.plist */,
@@ -183,10 +209,12 @@
 				B6BA397F24EE6699001704C3 /* Sources */,
 				B6BA398024EE6699001704C3 /* Frameworks */,
 				B6BA398124EE6699001704C3 /* Resources */,
+				B64E875B2505040F0000B449 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B64E875A2505040F0000B449 /* PBXTargetDependency */,
 			);
 			name = UIAlerterExample;
 			productName = UIAlerterExample;
@@ -256,7 +284,6 @@
 			files = (
 				B6BA399224EE669A001704C3 /* LaunchScreen.storyboard in Resources */,
 				B6BA398F24EE669A001704C3 /* Assets.xcassets in Resources */,
-				B6BA398D24EE6699001704C3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,13 +312,17 @@
 			files = (
 				B6BA398A24EE6699001704C3 /* ViewController.swift in Sources */,
 				B6BA398624EE6699001704C3 /* AppDelegate.swift in Sources */,
-				B6BA398824EE6699001704C3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B64E875A2505040F0000B449 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6BA396424EE6683001704C3 /* UIAlerter */;
+			targetProxy = B64E87592505040F0000B449 /* PBXContainerItemProxy */;
+		};
 		B6BA397124EE6683001704C3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B6BA396424EE6683001704C3 /* UIAlerter */;
@@ -300,14 +331,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B6BA398B24EE6699001704C3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B6BA398C24EE6699001704C3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B6BA399024EE669A001704C3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -541,6 +564,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = /Users/ugurcmk/personal_projects/UIAlerter/UIAlerter;
 				PRODUCT_BUNDLE_IDENTIFIER = cmk.UIAlerterExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -559,6 +583,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = /Users/ugurcmk/personal_projects/UIAlerter/UIAlerter;
 				PRODUCT_BUNDLE_IDENTIFIER = cmk.UIAlerterExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
