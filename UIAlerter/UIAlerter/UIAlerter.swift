@@ -29,8 +29,14 @@ open class UIAlerterBuilder: UIView {
         
     }
     
-    func setIcon(){
+    public func setImage(name: String) -> UIAlerterBuilder {
+        let imageView = UIImageView(frame: CGRect(x: 20, y: 105, width: 40, height: 40))
+        if let image = UIImage(named: name){
+            imageView.image = image
+        }
+        self.addSubview(imageView)
         
+        return self
     }
     
     public func show(){
