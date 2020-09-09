@@ -13,6 +13,20 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         self.view.backgroundColor = .white
+        
+        let showAlertButton = UIButton()
+        self.view.addSubview(showAlertButton)
+        showAlertButton.translatesAutoresizingMaskIntoConstraints = false
+        showAlertButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20).isActive = true
+        showAlertButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 40).isActive = true
+        showAlertButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true
+        showAlertButton.setTitle("Show Default Alert", for: .normal)
+        showAlertButton.setTitleColor(.white, for: .normal)
+        showAlertButton.backgroundColor = .lightGray
+        showAlertButton.addTarget(self, action: #selector(showDefaultAlert(_:)), for: .touchUpInside)
+    }
+    
+    @objc func showDefaultAlert(_ sender: UIButton){
         UIAlerterBuilder().setBackgroundColor(UIColor.lightGray).setImage(name: "notification").show()
     }
 }
