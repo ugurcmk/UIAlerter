@@ -39,6 +39,26 @@ open class UIAlerterBuilder: UIView {
         return self
     }
     
+    public func setTitle(_ title: String) -> UIAlerterBuilder {
+        let titleLabel = UILabel(frame: CGRect(x: 100, y: 100, width: 200, height: 20))
+//        titleLabel.backgroundColor = .orange
+        titleLabel.text = title
+        titleLabel.textColor = .black
+        self.addSubview(titleLabel)
+        
+        return self
+    }
+    
+    public func setText(_ text: String) -> UIAlerterBuilder {
+        let textLabel = UILabel(frame: CGRect(x: 100, y: 130, width: 200, height: 20))
+//        textLabel.backgroundColor = .green
+        textLabel.text = text
+        textLabel.textColor = .black
+        self.addSubview(textLabel)
+        
+        return self
+    }
+    
     public func show(){
         self.layer.opacity = 0.5
         

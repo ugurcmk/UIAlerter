@@ -27,7 +27,12 @@ class ViewController: UIViewController {
     }
     
     @objc func showDefaultAlert(_ sender: UIButton){
-        UIAlerterBuilder().setBackgroundColor(UIColor.lightGray).setImage(name: "notification").show()
+        UIAlerterBuilder()
+            .setBackgroundColor(UIColor.lightGray)
+            .setText("UIAlerter Text")
+            .setTitle("UIAlerter Title Text")
+            .setImage(name: "notification")
+            .show()
     }
 }
 
