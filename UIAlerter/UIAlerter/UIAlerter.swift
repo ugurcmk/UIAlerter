@@ -10,6 +10,7 @@ import UIKit
 
 open class UIAlerterBuilder: UIView {
     
+    var imageView: UIImageView?
     
     public init() {
         // TODO: height could be dynamic
@@ -30,11 +31,11 @@ open class UIAlerterBuilder: UIView {
     }
     
     public func setImage(name: String) -> UIAlerterBuilder {
-        let imageView = UIImageView(frame: CGRect(x: 20, y: 105, width: 40, height: 40))
+        imageView = UIImageView(frame: CGRect(x: 20, y: 105, width: 40, height: 40))
         if let image = UIImage(named: name){
-            imageView.image = image
+            imageView?.image = image
         }
-        self.addSubview(imageView)
+        self.addSubview(imageView!)
         
         return self
     }
@@ -51,7 +52,6 @@ open class UIAlerterBuilder: UIView {
     
     public func setText(_ text: String) -> UIAlerterBuilder {
         let textLabel = UILabel(frame: CGRect(x: 100, y: 130, width: 200, height: 20))
-//        textLabel.backgroundColor = .green
         textLabel.text = text
         textLabel.textColor = .black
         self.addSubview(textLabel)
@@ -62,6 +62,10 @@ open class UIAlerterBuilder: UIView {
     public func show(){
         self.layer.opacity = 0.5
         
+        if let icon = imageView {
+            scaleZoomIn(icon)
+        }
+        
         self.window?.windowLevel += 1
         if let window = UIApplication.shared.keyWindow {
             window.addSubview(self)
@@ -69,23 +73,48 @@ open class UIAlerterBuilder: UIView {
             UIApplication.shared.windows[0].addSubview(self)
         }
         
-        UIView.animate(withDuration: 0.3, delay:0.2, options: [.curveEaseInOut], animations: {
+        slideDown(whenCompleted: slideUp )
+    }
+    
+    private func slideDown(whenCompleted: (() -> Void)? = nil){
+        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut], animations: {
             self.frame.origin.y = 0
             self.layer.opacity = 1
         }, completion: { _ in
             UIView.animate(withDuration: 0.20, delay: 0, options: [.curveEaseInOut], animations: {
                 self.frame.origin.y = self.frame.origin.y - 30
             }, completion: {_ in
-                UIView.animate(withDuration: 0.2, delay: 1, options: [.curveEaseInOut], animations: {
-                    self.frame.origin.y = self.frame.origin.y + 30
-                }, completion: {_ in
-                    UIView.animate(withDuration: 0.2, delay: 0.1, options: [.curveEaseInOut], animations: {
-                        self.frame.origin.y = -210
-                        self.layer.opacity = 0
-                    }, completion: nil)
-                })
+                if let completion = whenCompleted {
+                    completion()
+                }
             })
         })
-        
+    }
+    
+    private func slideUp(){
+        UIView.animate(withDuration: 0.5, delay: 0.8, options: [.curveEaseInOut], animations: {
+            self.frame.origin.y = self.frame.origin.y + 30
+        }, completion: {_ in
+            UIView.animate(withDuration: 0.2, delay: 0.1, options: [.curveEaseInOut], animations: {
+                self.frame.origin.y = -210
+                self.layer.opacity = 0
+            }, completion: nil)
+        })
+    }
+    
+    private func scaleZoomIn(_ imageView: UIImageView) {
+        UIView.animate(withDuration: 0.6, delay: 0, options: [.curveEaseInOut], animations: {
+            self.imageView!.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        }, completion: {_ in
+            self.scaleZoomOut(imageView)
+        })
+    }
+    
+    private func scaleZoomOut(_ imageView: UIImageView){
+        UIView.animate(withDuration: 0.6, delay: 0, options: [.curveEaseInOut], animations: {
+            self.imageView!.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        }, completion: {_ in
+            self.scaleZoomIn(imageView)
+        })
     }
 }
