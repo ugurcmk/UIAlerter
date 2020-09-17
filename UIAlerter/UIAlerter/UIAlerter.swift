@@ -73,23 +73,19 @@ open class UIAlerterBuilder: UIView {
             UIApplication.shared.windows[0].addSubview(self)
         }
         
-        slideDown(whenCompleted: slideUp )
+        UIView.animate(
+            withDuration: 0.5,
+            delay: 0.5,
+            usingSpringWithDamping: 0.5,
+            initialSpringVelocity: 0.8,
+            options: .curveEaseInOut,
+            animations: {
+                self.frame.origin.y = -30
+                self.layer.opacity = 1
+        },
+            completion: { _ in self.slideUp() } )
     }
     
-    private func slideDown(whenCompleted: (() -> Void)? = nil){
-        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut], animations: {
-            self.frame.origin.y = 0
-            self.layer.opacity = 1
-        }, completion: { _ in
-            UIView.animate(withDuration: 0.20, delay: 0, options: [.curveEaseInOut], animations: {
-                self.frame.origin.y = self.frame.origin.y - 30
-            }, completion: {_ in
-                if let completion = whenCompleted {
-                    completion()
-                }
-            })
-        })
-    }
     
     private func slideUp(){
         UIView.animate(withDuration: 0.5, delay: 0.8, options: [.curveEaseInOut], animations: {
