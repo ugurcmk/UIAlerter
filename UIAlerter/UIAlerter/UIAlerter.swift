@@ -10,7 +10,9 @@ import UIKit
 
 open class UIAlerterBuilder: UIView {
     
-    var imageView: UIImageView?
+    private var imageView: UIImageView?
+    private let titleLabel = UILabel(frame: CGRect(x: 100, y: 100, width: 200, height: 20))
+    private let textLabel = UILabel(frame: CGRect(x: 100, y: 130, width: 200, height: 20))
     
     public init() {
         // TODO: height could be dynamic
@@ -25,9 +27,15 @@ open class UIAlerterBuilder: UIView {
         self.backgroundColor = color
         return self
     }
-
-    func textColor(){
-        
+    
+    public func setTitleColor(_ color: UIColor) -> UIAlerterBuilder {
+        self.titleLabel.textColor = color
+        return self
+    }
+    
+    public func setTextColor(_ color: UIColor) -> UIAlerterBuilder {
+        self.textLabel.textColor = color
+        return self
     }
     
     public func setImage(name: String) -> UIAlerterBuilder {
@@ -41,8 +49,6 @@ open class UIAlerterBuilder: UIView {
     }
     
     public func setTitle(_ title: String) -> UIAlerterBuilder {
-        let titleLabel = UILabel(frame: CGRect(x: 100, y: 100, width: 200, height: 20))
-//        titleLabel.backgroundColor = .orange
         titleLabel.text = title
         titleLabel.textColor = .black
         self.addSubview(titleLabel)
@@ -51,7 +57,6 @@ open class UIAlerterBuilder: UIView {
     }
     
     public func setText(_ text: String) -> UIAlerterBuilder {
-        let textLabel = UILabel(frame: CGRect(x: 100, y: 130, width: 200, height: 20))
         textLabel.text = text
         textLabel.textColor = .black
         self.addSubview(textLabel)
