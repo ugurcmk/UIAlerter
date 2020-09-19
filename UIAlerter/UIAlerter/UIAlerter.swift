@@ -13,6 +13,7 @@ open class UIAlerterBuilder: UIView {
     private var imageView: UIImageView?
     private let titleLabel = UILabel(frame: CGRect(x: 100, y: 100, width: 200, height: 20))
     private let textLabel = UILabel(frame: CGRect(x: 100, y: 130, width: 200, height: 20))
+    private var duration = TimeInterval(exactly: 0.8)
     
     public init() {
         // TODO: height could be dynamic
@@ -64,6 +65,11 @@ open class UIAlerterBuilder: UIView {
         return self
     }
     
+    public func setDuration(seconds: Double) -> UIAlerterBuilder {
+        duration = seconds
+        return self
+    }
+    
     public func show(){
         self.layer.opacity = 0.5
         
@@ -93,7 +99,7 @@ open class UIAlerterBuilder: UIView {
     
     
     private func slideUp(){
-        UIView.animate(withDuration: 0.5, delay: 0.8, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 0.5, delay: duration!, options: [.curveEaseInOut], animations: {
             self.frame.origin.y = self.frame.origin.y + 30
         }, completion: {_ in
             UIView.animate(withDuration: 0.2, delay: 0.1, options: [.curveEaseInOut], animations: {
