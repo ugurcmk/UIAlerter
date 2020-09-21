@@ -34,7 +34,7 @@ class ViewController: UIViewController {
             .setText("UIAlerter text...")
             .setTextColor(UIColor.red)
             .setImage(name: "notification")
-            .setDuration(seconds: 5)
+            .setDuration(seconds: 10)
             .show()
     }
 }
