@@ -28,7 +28,7 @@ open class UIAlerterBuilder: UIView {
         imageView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 15).isActive = true
         imageView.centerYAnchor.constraint(equalTo: backgroundView.centerYAnchor, constant: 15).isActive = true
         
-        
+        titleLabel.isHidden = true
     }
 
     required public init?(coder: NSCoder) {
@@ -62,12 +62,7 @@ open class UIAlerterBuilder: UIView {
         backgroundView.addSubview(titleLabel)
         titleLabel.text = title
         titleLabel.textColor = .black
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 40).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -20).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: imageView.topAnchor, constant: -5).isActive = true
-        
+        titleLabel.isHidden = false
         
         return self
     }
@@ -76,11 +71,6 @@ open class UIAlerterBuilder: UIView {
         backgroundView.addSubview(textLabel)
         textLabel.text = text
         textLabel.textColor = .black
-        textLabel.translatesAutoresizingMaskIntoConstraints = false
-        textLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
-        textLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
-        textLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
-        
         return self
     }
     
@@ -90,6 +80,8 @@ open class UIAlerterBuilder: UIView {
     }
     
     public func show(){
+        arrangeLayoutConstraints()
+        
         self.backgroundView.layer.opacity = 0.5
         
         scaleZoomIn(imageView)
@@ -112,6 +104,25 @@ open class UIAlerterBuilder: UIView {
                 self.backgroundView.layer.opacity = 1
         },
             completion: { _ in self.slideUp() } )
+    }
+    
+    func arrangeLayoutConstraints() {
+        textLabel.translatesAutoresizingMaskIntoConstraints = false
+        if titleLabel.isHidden {
+            textLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 40).isActive = true
+            textLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -20).isActive = true
+            textLabel.topAnchor.constraint(equalTo: imageView.topAnchor, constant: -5).isActive = true
+        }else{
+            titleLabel.translatesAutoresizingMaskIntoConstraints = false
+            titleLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 40).isActive = true
+            titleLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -20).isActive = true
+            titleLabel.topAnchor.constraint(equalTo: imageView.topAnchor, constant: -5).isActive = true
+            
+            textLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
+            textLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
+            textLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
+        }
+        
     }
     
     

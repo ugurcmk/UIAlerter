@@ -31,10 +31,10 @@ class ViewController: UIViewController {
             .setBackgroundColor(UIColor.lightGray)
             .setTitle("UIAlerter Title")
             .setTitleColor(UIColor.darkGray)
-            .setText("UIAlerter text...")
+            .setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nunc magna, tempor sed accumsan maximus, sollicitudin non ex. Maecenas nec justo in diam bibendum dignissim.")
             .setTextColor(UIColor.red)
             .setImage(name: "notification")
-            .setDuration(seconds: 10)
+            .setDuration(seconds: 5)
             .show()
     }
 }
