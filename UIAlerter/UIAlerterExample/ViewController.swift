@@ -33,7 +33,7 @@ class ViewController: UIViewController {
             .setTitleColor(UIColor.darkGray)
             .setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nunc magna, tempor sed accumsan maximus, sollicitudin non ex. Maecenas nec justo in diam bibendum dignissim.")
             .setTextColor(UIColor.red)
-            .setImage(name: "notification")
+            .setIcon(.fontAwesomeRegular(.bell))
             .setDuration(seconds: 5)
             .show()
     }

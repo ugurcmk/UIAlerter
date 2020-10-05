@@ -50,11 +50,8 @@ open class UIAlerterBuilder: UIView {
         return self
     }
     
-    public func setImage(name: String) -> UIAlerterBuilder {
-        if let image = UIImage(named: name){
-            imageView.image = image
-        }
-        
+    public func setIcon(_ icon: FontType) -> UIAlerterBuilder {
+        imageView.setIcon(icon: icon)
         return self
     }
     
